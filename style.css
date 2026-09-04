@@ -2,7 +2,7 @@
 :root {
     --bg-color: #121212;
     --text-color: #ffffff;
-    --highlight: #ff5722; /* Mocny pomarańczowy akcent */
+    --highlight: #ff5722;
     --card-bg: #1e1e1e;
 }
 
@@ -12,11 +12,21 @@
     box-sizing: border-box;
 }
 
+/* Płynne przewijanie do sekcji */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
+}
+
+/* Offset dla zakotwiczeń, by menu nie zasłaniało tytułów */
+section, footer {
+    scroll-margin-top: 80px; 
 }
 
 .container {
@@ -42,6 +52,56 @@ h2 {
 
 .text-center {
     text-align: center;
+}
+
+/* --- NOWE: Menu Nawigacyjne --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(18, 18, 18, 0.95);
+    border-bottom: 1px solid #333;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--highlight);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--highlight);
 }
 
 /* Przycisk */
@@ -179,6 +239,16 @@ footer p {
 
 /* Dopasowanie do telefonów (Responsywność) */
 @media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 10px;
+    }
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     .hero h1 { font-size: 2.5rem; }
     .about-content, .cards, .transformations {
         flex-direction: column;
