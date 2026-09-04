@@ -1,0 +1,190 @@
+/* Główne ustawienia kolorów i czcionek */
+:root {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --highlight: #ff5722; /* Mocny pomarańczowy akcent */
+    --card-bg: #1e1e1e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.highlight {
+    color: var(--highlight);
+}
+
+.bg-dark {
+    background-color: #0a0a0a;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Przycisk */
+.btn {
+    display: inline-block;
+    background-color: var(--highlight);
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background 0.3s;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #e64a19;
+}
+
+/* Sekcja Główna (Hero) */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* Domyślne szare tło. Możesz dodać zdjęcie w tle podmieniając url() */
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('img/tlo.jpg') center/cover; 
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* Sekcja: O mnie */
+.about-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-img {
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(255,87,34,0.2);
+}
+
+.about-text {
+    width: 50%;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* Sekcja: Oferta */
+.cards {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+    transition: transform 0.3s;
+    border-bottom: 3px solid var(--highlight);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.price {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+    color: var(--highlight);
+    font-size: 1.2rem;
+}
+
+/* Sekcja: Przemiany */
+.transformations {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.transformation-item {
+    background-color: var(--card-bg);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.transformation-item img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Stopka */
+footer {
+    background-color: #000;
+    padding: 40px 0;
+}
+
+footer p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.copyright {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Dopasowanie do telefonów (Responsywność) */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .about-content, .cards, .transformations {
+        flex-direction: column;
+    }
+    .about-img, .about-text {
+        width: 100%;
+    }
+}
