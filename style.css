@@ -68,7 +68,6 @@ h2 {
     display: flex;
     align-items: center;
     text-align: center;
-    /* Domyślne szare tło. Możesz dodać zdjęcie w tle podmieniając url() */
     background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('img/tlo.jpg') center/cover; 
 }
 
