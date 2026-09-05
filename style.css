@@ -24,7 +24,6 @@ body {
     line-height: 1.6;
 }
 
-/* Offset dla zakotwiczeń, by menu nie zasłaniało tytułów */
 section, footer {
     scroll-margin-top: 80px; 
 }
@@ -54,7 +53,7 @@ h2 {
     text-align: center;
 }
 
-/* --- NOWE: Menu Nawigacyjne --- */
+/* Menu Nawigacyjne */
 .navbar {
     position: fixed;
     top: 0;
@@ -169,18 +168,21 @@ h2 {
 /* Sekcja: Oferta */
 .cards {
     display: flex;
-    gap: 20px;
-    justify-content: space-between;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .card {
     background-color: var(--card-bg);
-    padding: 30px;
+    padding: 40px 30px;
     border-radius: 10px;
-    text-align: center;
-    flex: 1;
+    flex: 1 1 400px;
+    max-width: 500px;
     transition: transform 0.3s;
     border-bottom: 3px solid var(--highlight);
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
@@ -189,15 +191,44 @@ h2 {
 
 .card h3 {
     margin-bottom: 15px;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.card p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Lista korzyści w kartach */
+.offer-list {
+    list-style: none;
+    margin-top: auto; /* Wypycha listę na dół karty */
+}
+
+.offer-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+.offer-list li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--highlight);
+    font-weight: bold;
 }
 
 .price {
     display: block;
-    margin-top: 20px;
+    margin-top: 25px;
+    text-align: center;
     font-weight: bold;
     color: var(--highlight);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 /* Sekcja: Przemiany */
@@ -212,6 +243,7 @@ h2 {
     padding: 15px;
     border-radius: 10px;
     text-align: center;
+    flex: 1;
 }
 
 .transformation-item img {
@@ -223,12 +255,12 @@ h2 {
 /* Stopka */
 footer {
     background-color: #000;
-    padding: 40px 0;
+    padding: 50px 0;
 }
 
 footer p {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
 }
 
 .copyright {
@@ -250,7 +282,7 @@ footer p {
         justify-content: center;
     }
     .hero h1 { font-size: 2.5rem; }
-    .about-content, .cards, .transformations {
+    .about-content, .transformations {
         flex-direction: column;
     }
     .about-img, .about-text {
