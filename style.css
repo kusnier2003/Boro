@@ -1,4 +1,3 @@
-/* Główne ustawienia kolorów i czcionek */
 :root {
     --bg-color: #121212;
     --text-color: #ffffff;
@@ -6,16 +5,8 @@
     --card-bg: #1e1e1e;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Płynne przewijanie do sekcji */
-html {
-    scroll-behavior: smooth;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -24,9 +15,7 @@ body {
     line-height: 1.6;
 }
 
-section, footer {
-    scroll-margin-top: 80px; 
-}
+section, footer { scroll-margin-top: 80px; }
 
 .container {
     max-width: 1100px;
@@ -41,17 +30,9 @@ h2 {
     text-transform: uppercase;
 }
 
-.highlight {
-    color: var(--highlight);
-}
-
-.bg-dark {
-    background-color: #0a0a0a;
-}
-
-.text-center {
-    text-align: center;
-}
+.highlight { color: var(--highlight); }
+.bg-dark { background-color: #0a0a0a; }
+.text-center { text-align: center; }
 
 /* Menu Nawigacyjne */
 .navbar {
@@ -80,9 +61,7 @@ h2 {
     letter-spacing: 1px;
 }
 
-.logo span {
-    color: var(--highlight);
-}
+.logo span { color: var(--highlight); }
 
 .nav-links {
     list-style: none;
@@ -99,11 +78,8 @@ h2 {
     transition: color 0.3s;
 }
 
-.nav-links a:hover {
-    color: var(--highlight);
-}
+.nav-links a:hover { color: var(--highlight); }
 
-/* Przycisk */
 .btn {
     display: inline-block;
     background-color: var(--highlight);
@@ -117,9 +93,7 @@ h2 {
     margin-top: 20px;
 }
 
-.btn:hover {
-    background-color: #e64a19;
-}
+.btn:hover { background-color: #e64a19; }
 
 /* Sekcja Główna (Hero) */
 .hero {
@@ -156,14 +130,8 @@ h2 {
     box-shadow: 0 5px 15px rgba(255,87,34,0.2);
 }
 
-.about-text {
-    width: 50%;
-}
-
-.about-text p {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-}
+.about-text { width: 50%; }
+.about-text p { margin-bottom: 20px; font-size: 1.1rem; }
 
 /* Sekcja: Oferta */
 .cards {
@@ -185,25 +153,13 @@ h2 {
     flex-direction: column;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-}
+.card:hover { transform: translateY(-10px); }
+.card h3 { margin-bottom: 15px; font-size: 1.6rem; text-align: center; }
+.card p { text-align: center; margin-bottom: 20px; }
 
-.card h3 {
-    margin-bottom: 15px;
-    font-size: 1.6rem;
-    text-align: center;
-}
-
-.card p {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Lista korzyści w kartach */
 .offer-list {
     list-style: none;
-    margin-top: auto; /* Wypycha listę na dół karty */
+    margin-top: auto; 
 }
 
 .offer-list li {
@@ -231,25 +187,27 @@ h2 {
     font-size: 1.4rem;
 }
 
-/* Sekcja: Przemiany */
+/* Sekcja: Przemiany (Zaktualizowana dla 9 zdjęć) */
 .transformations {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     justify-content: center;
+    flex-wrap: wrap; /* Pozwala zdjęciom schodzić do kolejnych rzędów */
 }
 
 .transformation-item {
     background-color: var(--card-bg);
-    padding: 15px;
+    padding: 10px;
     border-radius: 10px;
     text-align: center;
-    flex: 1;
+    flex: 1 1 300px; /* Każde zdjęcie zajmie ok. 1/3 szerokości ekranu na komputerze */
+    max-width: 330px;
 }
 
 .transformation-item img {
     max-width: 100%;
     border-radius: 5px;
-    margin-bottom: 15px;
+    display: block;
 }
 
 /* Stopka */
@@ -258,18 +216,9 @@ footer {
     padding: 50px 0;
 }
 
-footer p {
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-}
+footer p { margin-bottom: 15px; font-size: 1.2rem; }
+.copyright { margin-top: 30px; font-size: 0.9rem; color: #666; }
 
-.copyright {
-    margin-top: 30px;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-/* Dopasowanie do telefonów (Responsywność) */
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
@@ -282,10 +231,6 @@ footer p {
         justify-content: center;
     }
     .hero h1 { font-size: 2.5rem; }
-    .about-content, .transformations {
-        flex-direction: column;
-    }
-    .about-img, .about-text {
-        width: 100%;
-    }
+    .about-content { flex-direction: column; }
+    .about-img, .about-text { width: 100%; }
 }
